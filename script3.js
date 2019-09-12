@@ -1,10 +1,10 @@
+validform=false;
 function formValidation()
 {	
-	validform=false;
 	var name = document.getElementById("stdname");
 	var add = document.getElementById("address");
 	var eid = document.getElementById("emailid");
-	var dob = document.getElementById("dob");
+	var dob = new Date(document.getElementById("dob"));
 	var branch = document.getElementByType("radio");
 	var i;
 	var radio_checked=false;
@@ -20,17 +20,20 @@ function formValidation()
 			checkbox_checked=true;
 		}
 	}
-}
 
-if(!(name.length==add.length==eid.length==dob.length=="") && checkbox_checked && radio_checked ){
+if(!(name.length == add.length == eid.length == dob.length == "") && checkbox_checked && radio_checked ){
 
-			if(allLetter(name)){
+			if(validName(name)){
 				if(validEmail(eid))
 				{
 					if(validDob(dob))
 					{	
-						validform=true;		
+						validform=true;			
 					}
+					else{
+					alert("age must be above 22 years ");
+					dob.focus();	
+					}	
 				}
 				else{
 					alert("You have entered an invalid email address!");
@@ -41,7 +44,22 @@ if(!(name.length==add.length==eid.length==dob.length=="") && checkbox_checked &&
 				alert("You have entered an invalid Name");
 				name.focus();	
 			}
-}	
+}
+}
+
+function validName(name){
+
+      var letters = /^[A-Za-z ]+$/;
+      if((name.match(letters).length > 0 )|| !(name.match(letters)==null))
+      {
+      return true;
+      }
+      else
+      {
+      return false;
+      }
+      
+}
 
 function validEmail(eid)
 {
@@ -55,7 +73,12 @@ function validEmail(eid)
 		return false;
 	}
 }
-
+function validDob(dob){
+	var present_date = new Date();
+	if ((present_date.getFullYear() - dob.getFullYear()) >= 22 ){
+		return true;
+	}
+}
 if(validform){
 	document.write("Welcome".name);
 }
