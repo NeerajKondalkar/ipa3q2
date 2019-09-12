@@ -1,34 +1,36 @@
 <!DOCTYPE html>
 <html lang="en"><head>
 <meta charset="utf-8">
-<title>JavaScript Form Validation</title>
+<title>JavaScript Form Validatio</title>
 <link rel='stylesheet' href='stylesheet3.css' type='text/css' />
 </head>
 <body>
 <h1>Registration Form</h1>
-<form name='registration' onSubmit="return formValidation();">
+<form name='registration'>
 <ul>
 <li><label for="stdname">Student Name:</label></li>
-<li><input type="text" name="stdname" /></li>
+<li><input id="stdname" type="text" name="stdname" /></li>
 <li><label for="address">Address:</label></li>
-<li><input type="text" name="address" /></li>
+<li><input id="address"
+	type="text" name="address" /></li>
 <li><label for="emailid">Email Id:</label></li>
-<li><input type="text" name="emailid" /></li>
+<li><input id="emailid" type="text" name="emailid" /></li>
 <li><label for="dob">Dob:</label></li>
-<li><input type="text" name="dob" /></li>
+<li><input id="dob" type="text" name="dob" /></li>
 <li><label id="branch">Branch:</label></li>
-<li><input type="radio"  name="IT" value="Information Technology" /><span>Information Technology</span></li>
-<li><input type="radio"  name="Comp" value="Computer" /><span>Computer</span></li>
-<li><input type="radio"  name="Mech" value="Mechanical" /><span>Mechanical</span></li>
-<li><input type="radio"  name="Civ" value="Civil" /><span>Civil</span></li>
+<div>
+<li><input  class="radio" type="radio"  name="It" value="It" /><span>Information Technology</span></li>
+<li><input  class="radio" type="radio"  name="Comp" value="Comp" /><span>Computer</span></li>
+<li><input  class="radio" type="radio"  name="Mech" value="Mech" /><span>Mechanical</span></li>
+<li><input  class="radio" type="radio"  name="Civ" value="Civ" /><span>Civil</span></li>
 <li><label>Hobbies:</label></li>
-<li><input type="checkbox" name="co" value="co" checked /><span>Coding</span></li>
-<li><input type="checkbox" name="pl" value="pl" /><span>Playing</span></li>
-<li><input type="checkbox" name="wt" value="wt" /><span>Writing</span></li>
-<li><input type="checkbox" name="tk" value="tk" /><span>Trekking</span></li>
-<script src="script3.js"></script>
-<li><input type="submit" name="submit" value="Submit" /></li>
+<li><input class="checkbox" type="checkbox" name="co" value="co"><span>Coding</span></li>
+<li><input class="checkbox" type="checkbox" name="pl" value="pl"><span>Playing</span></li>
+<li><input class="checkbox" type="checkbox" name="wt" value="wt"><span>Writing</span></li>
+<li><input class="checkbox" type="checkbox" name="tk" value="tk"><span>Trekking</span></li>
+<li><input type="submit" name="submit" value="Submit" onclick="formValidation()"></li>
 </ul>
 </form>
+<script src="script3.js"></script>
 </body>
 </html>
