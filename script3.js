@@ -23,19 +23,19 @@ try{
 				radio_checked=true;
 			}
 		}
-		var checkbox_checked;
+		var checkbox_checked=false;
 		console.log("now entering for loop to check hobby[i]      LINE 23");
 		var hobby = document.getElementsByClassName("checkbox");
 		for (i=0; i<hobby.length; i++){
 			console.log("checking for hobby["+i+"] : "+hobby[i]+".checked      LINE 29");
 			if(hobby[i].checked){
-				console.log("checkbox_Checked = TRUE            LINE 32");
+				console.log("checkbox_checked = TRUE            LINE 32");
 				checkbox_checked=true;
 			}
 		}
-
-	if(!(name.length == add.length == eid.length == "") && !(isNaN(d)) && checkbox_checked && radio_checked ){
-				console.log("now inside if statement for checking empty values       LINE 33");
+	console.log()
+	if((name.length != 0 && add.length != 0 && eid.length != 0) && !(isNaN(dob)) && checkbox_checked && radio_checked ){
+				console.log("now inside if statement for checking valid values       LINE 33");
 				if(validName(name)){
 					console.log("now inside if statement for validName       LINE 35");
 					if(validEmail(eid))
