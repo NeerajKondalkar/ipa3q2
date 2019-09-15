@@ -25,6 +25,7 @@ try{
 			if(hobby[j].checked){
 				checkbox_checked=true;
 				hobby_array.push(hobby[j].value);
+				break;
 			}
 		}
 
