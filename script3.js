@@ -34,6 +34,7 @@ try{
 				hobby_array.push(hobby[j].value);
 				console.log("hobby_array : " + hobby_array);
 			}
+			console.log("Value of j outside the for loop (j=0 j<hobby.length, j++) :"+j+"       LINE 37  )");
 		}
 
 		if((name.length != 0 && add.length != 0 && eid.length != 0) && !(isNaN(dob)) && checkbox_checked && radio_checked ){
@@ -68,8 +69,15 @@ try{
 			var line4 = "Email :" + eid + "<br>";
 			var line5 = "Branch :" + branch[i].value + "<br>";
                         var hobbies = "";
-                        hobby_array.foreach(function(val){hobbies = hobbies + ", " + val;});
+                        hobby_array.forEach(function(val){                    
+                        						console.log("val : " + val + "    lINE 73");
+                        						console.log("hobbies : " + hobbies + "    LINE 74");    				  		
+		                        				hobbies = hobbies + val + ", ";
+		                        				console.log("hobbies :" + hobbies + "   LINE 76");
+		                        			}
+                        				   );
 			var line6 =  "Hobby :" + hobbies + "<br>";
+			console.log("hobbies outside loop : " + hobbies + "    LINE 80");
  			document.getElementById("output").innerHTML = line1 + line2 + line3 + line4 + line5 + line6;
  			document.write(document.getElementById("output").innerHTML);
 		}
