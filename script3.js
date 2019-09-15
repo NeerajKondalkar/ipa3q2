@@ -59,9 +59,9 @@ try{
 			var line3 = "DOB :" + dob.getFullYear() + "-" + dob.getMonth() + "-" + dob.getDate() + "<br>";
 			var line4 = "Email :" + eid + "<br>";
 			var line5 = "Branch :" + branch[i].value + "<br>";
-                        var hobbies = "";
-                        hobby_array.foreach(function(val){hobbies = hobbies + ", " + val;});
-			var line6 =  "Hobby :" + hobbies + "<br>";
+            //var hobbies = "";
+            //hobby_array.foreach(function(val){hobbies = hobbies + ", " + val;});
+			var line6 =  "Hobby :" + hobby[j].value + "<br>";
  			document.getElementById("output").innerHTML = line1 + line2 + line3 + line4 + line5 + line6;
  			document.write(document.getElementById("output").innerHTML);
 		}
