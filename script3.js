@@ -19,12 +19,20 @@ try{
 		}
 		var checkbox_checked=false;
 		var hobby = document.getElementsByClassName("checkbox");
+		console.log("hobby : " + hobby + "     LINE 22");
 		var j;
                 var hobby_array = new Array();
+              	console.log("hobby_array : " + hobby_array + "     LINE 25");
+              	console.log("hobby.length : " + hobby.length + "     LINE 26");  
 		for (j=0; j<hobby.length; j++){
+			console.log("j : " + j + "     LINE 28");
+			console.log("hobby[j] : " + hobby[j] + "     LINE 29");
+			console.log("hobby[j].checked : " + hobby[j].checked + "     LINE 30");
 			if(hobby[j].checked){
 				checkbox_checked=true;
+				console.log("checkbox_checked :" + checkbox_checked);
 				hobby_array.push(hobby[j].value);
+				console.log("hobby_array : " + hobby_array);
 			}
 		}
 
