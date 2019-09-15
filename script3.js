@@ -19,14 +19,22 @@ try{
 		}
 		var checkbox_checked=false;
 		var hobby = document.getElementsByClassName("checkbox");
+		console.log("hobby : " + hobby + "     LINE 22");
 		var j;
                 var hobby_array = new Array();
+              	console.log("hobby_array : " + hobby_array + "     LINE 25");
+              	console.log("hobby.length : " + hobby.length + "     LINE 26");  
 		for (j=0; j<hobby.length; j++){
+			console.log("j : " + j + "     LINE 28");
+			console.log("hobby[j] : " + hobby[j] + "     LINE 29");
+			console.log("hobby[j].checked : " + hobby[j].checked + "     LINE 30");
 			if(hobby[j].checked){
 				checkbox_checked=true;
+				console.log("checkbox_checked :" + checkbox_checked);
 				hobby_array.push(hobby[j].value);
-				break;
+				console.log("hobby_array : " + hobby_array);
 			}
+			console.log("Value of j outside the for loop (j=0 j<hobby.length, j++) :"+j+"       LINE 37  )");
 		}
 
 		if((name.length != 0 && add.length != 0 && eid.length != 0) && !(isNaN(dob)) && checkbox_checked && radio_checked ){
@@ -60,9 +68,16 @@ try{
 			var line3 = "DOB :" + dob.getFullYear() + "-" + dob.getMonth() + "-" + dob.getDate() + "<br>";
 			var line4 = "Email :" + eid + "<br>";
 			var line5 = "Branch :" + branch[i].value + "<br>";
-            //var hobbies = "";
-            //hobby_array.foreach(function(val){hobbies = hobbies + ", " + val;});
-			var line6 =  "Hobby :" + hobby[j].value + "<br>";
+                        var hobbies = "";
+                        hobby_array.forEach(function(val){                    
+                        						console.log("val : " + val + "    lINE 73");
+                        						console.log("hobbies : " + hobbies + "    LINE 74");    				  		
+		                        				hobbies = hobbies + val + ", ";
+		                        				console.log("hobbies :" + hobbies + "   LINE 76");
+		                        			}
+                        				   );
+			var line6 =  "Hobby :" + hobbies + "<br>";
+			console.log("hobbies outside loop : " + hobbies + "    LINE 80");
  			document.getElementById("output").innerHTML = line1 + line2 + line3 + line4 + line5 + line6;
  			document.write(document.getElementById("output").innerHTML);
 		}
